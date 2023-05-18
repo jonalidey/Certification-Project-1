@@ -1,0 +1,163 @@
+<html>
+  <head>
+    <title>Index Page</title>
+    <link href="../css/vendor/bootstrap/bootstap.min.css" rel="stylesheet">
+    <link href="font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        #maindiv{
+            padding-top: 20;
+            padding-left: 0;
+            align-self: center;
+        }
+        td{
+            font-size: x-small;
+        }
+        .carousel-item img {
+            width:100%;
+            height: 400px;
+        }
+        div>caption{
+            padding: 20px;
+        }
+        #maindiv{
+            padding-top: 50px;
+        }
+     </style>
+    
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Language');
+        data.addColumn('number', 'Students');
+        data.addRows([
+            ['Python', 230],
+            ['Java', 175],
+            ['Java Script', 150],
+            ['Kotlin', 100],
+            ['R', 85],
+            ['PHP', 75],
+            ['GO', 60],
+            ['C', 50],
+            ['SWIFT', 40],
+            ['C#', 35]
+        ]);
+
+        // Set chart options
+        var options = {'title':'Programming Languages',
+                       'width':500,
+                       'height':400};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">Home</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
+                    aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarID">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="./google-charts.html">Programming Languages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./Lobsterfonts.html">Lobster Fonts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./locate.html">Locate us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container" id="maindiv">
+        <br><br>
+        <h2 align="center">Top 10 Programming Languages</h2>
+        <br>
+        <div class="row">
+            <div class="col-md-8">
+                <table class="table table-bordered border-primary table-secondary">
+                    <thead class="table-warning table-bordered border-primary">
+                        <th scope="col">Programming Lanugage</th>
+                        <th scope="col">Number of Students</th>
+                        <th scope="col">Description</th>
+                    </thead>
+                    <tr>
+                        <th scope="row">Python</th>
+                        <td>230</td>
+                        <td>Python can be regarded as the future of programming languages. As per the latest statistics, Python is the main coding language of developers.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Java</th>
+                        <td>175</td>
+                        <td>Java is one of the most powerful programming languages that is currently used in more than 3 billion devices.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Java script</th>
+                        <td>150</td>
+                        <td>JavaScript is one of the world’s most popular programming languages on the web. As per the survey, more than 97 percent of the websites use JavaScript on the client-side of the webpage.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Kotlin</th>
+                        <td>100</td>
+                        <td>Kotlin is a cross-platform programming language designed to develop apps. It is being used by more than 60% of android developers.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">R</th>
+                        <td>85</td>
+                        <td>R is a programming language for statistical and graphical programming. It is widely used among statisticians and data miners for data analysis.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">PHP</th>
+                        <td>75</td>
+                        <td>PHP is one of the general-purpose scripting languages that will continue to hold its importance in the upcoming years.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">GO</th>
+                        <td>60</td>
+                        <td>Go is one of the most reliable and efficient programming languages that stands out from the rest. It was originally designed at Google in 2007 to manage its rapidly growing infrastructure.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">C</th>
+                        <td>50</td>
+                        <td>C is a general-purpose programming language that is designed to work efficiently on games, graphics, and enterprise applications.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">SWIF</th>
+                        <td>40</td>
+                        <td>It is a robust programming language developed by Apple Inc. It is used to create apps for iOS, watchOS, macOS, and many more.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">C#</th>
+                        <td>35</td>
+                        <td>C# is a programming language that runs on the .NET framework and is developed by Microsoft in 2000.</td>
+                    </tr>
+                </table>
+            </div>
+            <!--Div that will hold the pie chart-->
+            <div class="col-md-4" id="chart_div"></div>
+        </div>
+    </div>
+    
+    <script src="./js/vendor/jquery/jquery.js"></script>
+    <script src="./js/vendor/popper/popper.js"></script>
+   <script src="./js/vendor/Bootstap/bootstap.min.js"></script>
+
+  </body>
+</html>
